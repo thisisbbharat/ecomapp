@@ -1,0 +1,28 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        git 'https://github.com/HaneeshDevops/ecomapp.git'
+        sh 'mvn clean install'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
+stage('SonarQube Analysis') {
+    steps {
+        script {
+            def sonarCredentials = credentials('SonarQube')
+            sh "mvn clean verify sonar:sonar -Dsonar.login=${sonarCredentials}"
+        }
+    }
+}
+
+  }
+}

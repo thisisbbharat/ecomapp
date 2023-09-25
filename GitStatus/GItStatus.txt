@@ -1,0 +1,13 @@
+* June 12
+#Build v1.0 status: pass
+#Build v1.1 status:fail
+#Build v2.0 status:....
+BUild check with kubernetes
+
+full_deployment application is ready !! check once.
+check two
+chech three
+check four
+check v1
+check2
+check3
