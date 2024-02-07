@@ -32,7 +32,7 @@ public class ProductItemsController {
 	@Autowired
 	public ProductItemsService productItemsService;
 	
-	@PostMapping("/addProductItems")
+	@PostMapping("/addProductItemsByBharath")
 	public ResponseEntity<?> addProductItems(@Valid @RequestBody AddProductItemsDTO addProductItemsDTO, BindingResult result) {
 	    if (result.hasErrors()) {
 	        Map<String, String> errors = new HashMap<>();
