@@ -18,7 +18,9 @@ pipeline {
 stage('Deploy') {
     steps {
         script {
-            sh 'docker-compose up -d'
+          sh 'docker rmi -f $(docker images -aq)'
+          sh 'docker rm -f $(docker ps -aq)'
+          sh 'docker-compose up -d'
                }
          }
                }
