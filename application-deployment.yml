@@ -13,7 +13,25 @@ spec:
         app: javapp
     spec:
       containers:
+        - name: postgres
+          image: haneeshdevops/postgres:latest
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "Quantum9963"
+            - name: POSTGRES_DB
+              value: "QUANTUM"
         - name: javapp
           image: haneeshdevops/ecomapp:latest
           ports:
             - containerPort: 8084
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgres:5432/QUANTUM"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "Quantum9963"
