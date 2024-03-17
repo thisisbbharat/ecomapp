@@ -25,7 +25,7 @@ spec:
             - name: POSTGRES_DB
               value: "QUANTUM"
         - name: javapp
-          image: haneeshdevops/ecomapp:latest
+          image: haneeshdevops/ecomapp_app:latest
           ports:
             - containerPort: 8084
           env:
